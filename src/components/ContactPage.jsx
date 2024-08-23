@@ -6,7 +6,7 @@ function ContactPage() {
   }, []);
   return (
     <>
-      <div className="flex justify-around items-center px-24 gap-12 mt-24">
+      <div className="flex flex-col-reverse md:flex-row justify-around items-center md:px-24 px-4 gap-12 mt-24">
         <div>
           <ContactForm />
         </div>
