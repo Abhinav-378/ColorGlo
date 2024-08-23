@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import ContactForm from "./ContactForm";
-useEffect(() => {
-  window.scrollTo(0, 0);
-}, []);
 function ContactPage() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <div className="flex justify-around items-center px-24 gap-12 mt-24">
