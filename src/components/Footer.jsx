@@ -145,7 +145,7 @@ function Footer() {
         <hr className="w-[90vw] mx-auto border-slate-600 py-3" />
         <div className="flex flex-col-reverse md:flex-row justify-around items-center">
           <div className="py-8">&#169; Copywrite ColorGo</div>
-          <div className="flex justify-center gap-12 md:gap-10 items-center">
+          <div className="flex justify-center gap-6 md:gap-10 items-center">
             <div>
               <a href="" className="text-lg font-semibold">
                 Terms and conditions
