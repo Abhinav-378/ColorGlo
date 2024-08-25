@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom"; // Import useLocation
 import bg from "../assets/homeBg.jfif";
 import wave from "../assets/HomeWave.png";
 import quoteBg from "../assets/colorGloBg.jpg";
@@ -19,12 +20,21 @@ import Categories from "./Categories";
 import ContactSection from "./ContactSection";
 import ButtonSolutions from "./ButtonSolutions";
 function HomePage() {
+  const location = useLocation(); // Get the current location (needed to detect the hash)
+
   useEffect(() => {
     AOS.init({
       duration: 1000,
     });
-    window.scrollTo(0, 0);
-  }, []);
+    window.scrollTo(0, 0); // Scroll to top initially on page load
+
+    if (location.hash === "#projects") {
+      const projectsSection = document.getElementById("projects");
+      if (projectsSection) {
+        projectsSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]); // Re-run the effect when the location changes
   return (
     <div>
       <div
@@ -149,7 +159,7 @@ function HomePage() {
 </div>
 
       {/* Categories  */}
-      <Categories />
+      <Categories id="projects"  />
       {/* Artistry  */}
       <div className="my-12">
         <h1 className="text-6xl font-semibold text-orange-700 text-center">
@@ -184,7 +194,7 @@ function HomePage() {
         </div>
       </div>
         
-      <ContactSection />
+      <ContactSection/>
       <div className="flex flex-col gap-8 justify-between items-center space-y-4 md:space-y-0 md:space-x-6 px-4 md:px-20 my-5">
         <div className="uppercase my-5 text-4xl md:text-5xl font-bold text-center md:text-left">
           Certified & Recognised

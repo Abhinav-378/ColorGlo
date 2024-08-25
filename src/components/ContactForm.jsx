@@ -1,8 +1,8 @@
 import React from "react";
 const ContactForm = () => {
   return (
-    <form className="max-w-lg mx-auto p-4 sm:p-8 bg-gradient-to-br bg-opacity-10 backdrop-blur-lg backdrop-filter rounded-lg border-2 border-solid border-orange-400">
-      <div className="w-full h-12 relative flex rounded-xl mb-8">
+    <form className="min-w-80 w-[40vw] mx-auto p-4 sm:p-8 bg-gradient-to-br bg-opacity-10 backdrop-blur-lg backdrop-filter rounded-lg border-2 border-solid border-orange-400">
+      <div className="w-full h-12 relative flex rounded-xl mb-8 ">
         <input
           required
           className="peer w-full bg-transparent outline-none px-4 text-base rounded-xl bg-white border border-[rgb(64,112,244)] focus:shadow-md"

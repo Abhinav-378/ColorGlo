@@ -31,7 +31,7 @@ const projects = [
 
 const categories = ["All", "Automotive", "Aviation", "Boutique", "Commercial", "Residential"];
 
-const Categories = () => {
+const Categories = ({id}) => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [filteredProjects, setFilteredProjects] = useState(projects);
   const [isLoading, setIsLoading] = useState(false);
@@ -58,7 +58,7 @@ const Categories = () => {
   const formatTitleForUrl = (title) => title.replace(/\s+/g, '');
 
   return (
-    <div className="p-8 bg-gray-100">
+    <div className="p-8 bg-gray-100" id={id}>
       <h2 className="text-4xl font-bold text-center mb-6">Featured Projects</h2>
       <p className="text-center mb-8">A Glimpse of Our Expertise & Craftsmanship.</p>
 

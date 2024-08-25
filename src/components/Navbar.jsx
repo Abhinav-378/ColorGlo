@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import Logo from '../assets/logo.png';
 import ButtonNav from './ButtonNav';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const menuRef = useRef(null);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -14,9 +15,23 @@ function Navbar() {
     setIsOpen(false);
   };
 
+  // Close menu when clicking outside the navigation menu
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        closeMenu();
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   return (
     <div className="bg-gray-700 bg-opacity-80 backdrop-filter backdrop-blur-lg text-white fixed top-0 left-0 z-50 w-full">
-      <div className="container mx-auto flex flex-wrap items-center justify-between px-4">
+      <div className="container mx-auto flex flex-wrap items-center justify-between px-3 md:px-1">
         
         {/* Logo */}
         <div className="flex items-center my-3">
@@ -43,7 +58,10 @@ function Navbar() {
         </div>
 
         {/* Navigation Links and Button for Desktop */}
-        <div className={`lg:flex items-center w-full lg:w-auto ${isOpen ? "block" : "hidden"}`}>
+        <div
+          ref={menuRef}
+          className={`lg:flex items-center w-full lg:w-auto ${isOpen ? "block" : "hidden"}`}
+        >
           {/* Navigation Links */}
           <ul className="flex flex-col lg:flex-row lg:space-x-4 mt-4 lg:mt-0">
             <li>
@@ -73,11 +91,51 @@ function Navbar() {
                 Services <i className="fa fa-caret-down"></i>
               </button>
               <ul className="absolute left-0 top-7 mt-2 w-40 bg-white text-black rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none group-hover:pointer-events-auto">
-                <li><Link to="/services/automotive" className="block px-4 py-2 hover:bg-gray-200" onClick={closeMenu}>Automotive</Link></li>
-                <li><Link to="/services/aviation" className="block px-4 py-2 hover:bg-gray-200" onClick={closeMenu}>Aviation</Link></li>
-                <li><Link to="/services/boutique" className="block px-4 py-2 hover:bg-gray-200" onClick={closeMenu}>Boutique</Link></li>
-                <li><Link to="/services/corporate" className="block px-4 py-2 hover:bg-gray-200" onClick={closeMenu}>Corporate</Link></li>
-                <li><Link to="/services/residential" className="block px-4 py-2 hover:bg-gray-200" onClick={closeMenu}>Residential</Link></li>
+                <li>
+                  <Link
+                    to="/services/automotive"
+                    className="block px-4 py-2 hover:bg-gray-200"
+                    onClick={closeMenu}
+                  >
+                    Automotive
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/services/aviation"
+                    className="block px-4 py-2 hover:bg-gray-200"
+                    onClick={closeMenu}
+                  >
+                    Aviation
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/services/boutique"
+                    className="block px-4 py-2 hover:bg-gray-200"
+                    onClick={closeMenu}
+                  >
+                    Boutique
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/services/corporate"
+                    className="block px-4 py-2 hover:bg-gray-200"
+                    onClick={closeMenu}
+                  >
+                    Corporate
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/services/residential"
+                    className="block px-4 py-2 hover:bg-gray-200"
+                    onClick={closeMenu}
+                  >
+                    Residential
+                  </Link>
+                </li>
               </ul>
             </li>
             <li>

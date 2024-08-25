@@ -6,8 +6,14 @@ function ContactPage() {
   }, []);
   return (
     <>
-      <div className="flex flex-col-reverse md:flex-row justify-around items-center md:px-24 px-4 gap-12 mt-24">
+      <h1 className="text-4xl md:text-6xl font-bold mb-4 flex justify-center items-center text-center pt-8 h-[40vh] bg-gradient-to-b from-orange-200 via-orange-100 to-white">
+        Contact Us
+      </h1>
+      <div className="flex flex-col-reverse md:flex-row justify-around items-center md:px-24 px-4 gap-12 mt-4">
         <div>
+        <h1 className="uppercase font-medium md:text-5xl pb-5 text-center text-3xl ">
+          Get in touch with us
+        </h1>
           <ContactForm />
         </div>
         <div className="text-lg font-normal">
