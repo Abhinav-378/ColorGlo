@@ -25,7 +25,7 @@ const ContactForm = () => {
     setSending(true);
 
     axios
-      .post("http://localhost:5000/api/send", formData)
+      .post("https://colorglobackend.onrender.com/api/send", formData)
       .then((response) => {
         console.log("Email sent successfully!", response.data.message);
         setSent(true);
