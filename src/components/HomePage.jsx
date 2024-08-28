@@ -19,6 +19,8 @@ import iso from "../assets/certified/iso.png";
 import Categories from "./Categories";
 import ContactSection from "./ContactSection";
 import ButtonSolutions from "./ButtonSolutions";
+import './styles/home.css'
+
 function HomePage() {
   const location = useLocation(); // Get the current location (needed to detect the hash)
 
@@ -196,16 +198,35 @@ function HomePage() {
         
       <ContactSection/>
       <div className="flex flex-col gap-8 justify-between items-center space-y-4 md:space-y-0 md:space-x-6 px-4 md:px-20 my-5">
-        <div className="uppercase my-5 text-4xl md:text-5xl font-bold text-center md:text-left">
-          Certified & Recognised
-        </div>
-        <div className="flex flex-row flex-wrap justify-around items-center gap-5">
-          <img src={bbb} alt="BBB" className="w-32 md:w-48 h-auto " />
-          <img src={ifa} alt="IFA" className="w-32 md:w-48 h-auto " />
-          <img src={anab} alt="ANAB" className="w-32 md:w-48 h-auto " />
-          <img src={iso} alt="ISO" className="w-32 md:w-48 h-auto " />
+      <div className="uppercase my-5 text-4xl md:text-5xl font-bold text-center md:text-left">
+        Certified & Recognised
+      </div> 
+      {/* Infinite smooth scrolling slider for small screens */}
+      <div className="block sm:hidden w-full overflow-hidden">
+        <div className="slider">
+          <div className="slider-track">
+            <div className="slide mx-5"><img src={bbb} alt="BBB" className="w-40 h-auto mx-auto " /></div>
+            <div className="slide mx-5"><img src={ifa} alt="IFA" className="w-40 h-auto mx-auto " /></div>
+            <div className="slide mx-5"><img src={anab} alt="ANAB" className="w-40 h-auto mx-auto " /></div>
+            <div className="slide mx-5"><img src={iso} alt="ISO" className="w-40 h-auto mx-auto " /></div>
+
+            {/* Duplicate slides for continuous loop */}
+            <div className="slide mx-5"><img src={bbb} alt="BBB" className="w-40 h-auto mx-auto " /></div>
+            <div className="slide mx-5"><img src={ifa} alt="IFA" className="w-40 h-auto mx-auto " /></div>
+            <div className="slide mx-5"><img src={anab} alt="ANAB" className="w-40 h-auto mx-auto " /></div>
+            <div className="slide mx-5"><img src={iso} alt="ISO" className="w-40 h-auto mx-auto " /></div>
+          </div>
         </div>
       </div>
+
+      {/* Static images visible on larger screens */}
+      <div className="hidden sm:flex flex-row flex-wrap justify-around items-center gap-5">
+        <img src={bbb} alt="BBB" className="w-32 md:w-48 h-auto" />
+        <img src={ifa} alt="IFA" className="w-32 md:w-48 h-auto" />
+        <img src={anab} alt="ANAB" className="w-32 md:w-48 h-auto" />
+        <img src={iso} alt="ISO" className="w-32 md:w-48 h-auto" />
+      </div>
+    </div>
 
     </div>
   );

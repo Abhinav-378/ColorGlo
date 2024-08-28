@@ -1,0 +1,29 @@
+/* HomePage.css */
+.slider {
+    height: 100px; /* Adjust to your needs */
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .slider-track {
+    display: flex;
+    width: calc(100px * 8); /* Width should be based on the number of slides */
+    animation: scroll 20s linear infinite; /* Duration depends on the speed you want */
+  }
+  
+  .slide {
+    flex-shrink: 0;
+    width: 100px; /* Same as height, adjust as necessary */
+  }
+  
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-100px * 4)); /* This should scroll all original slides */
+    }
+  }
+  
