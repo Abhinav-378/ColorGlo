@@ -49,7 +49,7 @@ const SlideTabsExample = () => {
 
   return (
     <div className="sm:px-8 px-5 py-14 ">
-      <h1 className="text-5xl font-semibold text-center my-8">TAILORED SOLUTIONS FOR</h1>
+      <h1 className="text-5xl font-semibold text-center my-8 text-transparent bg-clip-text bg-gradient-to-r to-violet-800 from-violet-400">TAILORED SOLUTIONS FOR</h1>
       <div className="flex justify-center items-center flex-wrap gap-2">
         {tabs.map((tab) => (
           <Chip

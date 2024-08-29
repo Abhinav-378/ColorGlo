@@ -59,7 +59,7 @@ const Categories = ({id}) => {
 
   return (
     <div className="p-8 bg-gray-100" id={id}>
-      <h2 className="text-4xl font-bold text-center mb-6">Featured Projects</h2>
+      <h2 className="text-5xl font-bold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-[#0f2699] to-[#00aaff] uppercase">Featured Projects</h2>
       <p className="text-center mb-8">A Glimpse of Our Expertise & Craftsmanship.</p>
 
       <div className="flex flex-wrap gap-3 justify-center space-x-4 mb-6">

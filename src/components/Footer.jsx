@@ -18,7 +18,7 @@ function Footer() {
               products.
             </p>
           </div>
-            <div className="px-7 w-[100vw] md:w-auto">
+            <div className="px-7  w-[60vw] md:w-auto bg-gradient-to-r from-[rgba(94,100,108,0.075)] via-[hsla(0,11%,56%,0.063)] to-[rgba(166,176,186,0.106)] rounded-[20px] h-full p-5 md:p-10">
               {/* links  */}
               <h2 className="text-xl md:text-2xl font-semibold">
                 Quick Navigation
@@ -38,8 +38,9 @@ function Footer() {
                 </li>
               </ul>
             </div>
-            <div className="">
+              <div className="flex flex-col md:flex-row justify-between items-center gap-3 md:gap-8 bg-gradient-to-r from-[rgba(94,100,108,0.075)] via-[hsla(0,11%,56%,0.063)] to-[rgba(166,176,186,0.106)] rounded-[20px] h-full p-4">
               {/* contact  */}
+            <div className="">
               <h2 className="text-xl md:text-2xl font-semibold">Contact</h2>
               <p className="text-base md:text-lg max-w-72">
                 233, 4th cross, 4th main, 1st Block, Koramangala.
@@ -55,12 +56,9 @@ function Footer() {
                 ></iframe>
             </div>
           
-          <div>
             {/* social  */}
+          <div>
             <h3 className="text-xl font-semibold pb-4 text-center">Social</h3>
-            {/* <i className="bi bi-facebook text-xl text-blue-700 hover:bg-blue-700 hover:text-white px-2 py-1 rounded-full duration-500"></i>
-              <i className="bi bi-twitter-x text-xl hover:bg-black hover:text-white px-2 py-1 rounded-full duration-500"></i>
-              <i className="bi bi-instagram text-xl text-pink-600 hover:bg-pink-600 hover:text-white px-2 py-1 rounded-full duration-500 "></i> */}
             <div className="flex gap-3">
               <a href="https://www.facebook.com/colorgloindia/" target="blank">
                 <button className="w-10 h-10 flex items-center justify-center relative overflow-hidden rounded-full bg-white  group transition-all duration-300">
@@ -145,6 +143,7 @@ function Footer() {
                 </button>
               </a>
             </div>
+          </div>
           </div>
         </div>
         <hr className="w-[90vw] mx-auto border-slate-600 py-3" />

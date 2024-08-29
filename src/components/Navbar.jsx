@@ -68,8 +68,9 @@ function Navbar() {
               <NavLink
                 to="/"
                 onClick={closeMenu}
-                className="block text-white px-3 py-2 rounded hover:bg-gray-600"
-                activeClassName="bg-gray-100 text-gray-800 font-medium"
+                className={({ isActive }) =>
+                  `block px-3 py-2 rounded ${isActive ? "bg-gray-100 text-gray-800 font-medium" : "text-white hover:bg-gray-600"}`
+                }
               >
                 Home
               </NavLink>
@@ -78,8 +79,9 @@ function Navbar() {
               <NavLink
                 to="/about"
                 onClick={closeMenu}
-                className="block text-white px-3 py-2 rounded hover:bg-gray-600"
-                activeClassName="bg-gray-100 text-gray-800 font-medium"
+                className={({ isActive }) =>
+                  `block px-3 py-2 rounded ${isActive ? "bg-gray-100 text-gray-800 font-medium" : "text-white hover:bg-gray-600"}`
+                }
               >
                 About
               </NavLink>
@@ -142,8 +144,9 @@ function Navbar() {
               <NavLink
                 to="/contact"
                 onClick={closeMenu}
-                className="block text-white px-3 py-2 rounded hover:bg-gray-600"
-                activeClassName="bg-gray-100 text-gray-800 font-medium"
+                className={({ isActive }) =>
+                  `block px-3 py-2 mb-3 md:mb-0 rounded ${isActive ? "bg-gray-100 text-gray-800 font-medium" : "text-white hover:bg-gray-600"}`
+                }
               >
                 Contact
               </NavLink>
