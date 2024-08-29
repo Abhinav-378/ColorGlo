@@ -7,9 +7,11 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef(null);
 
-  const toggleMenu = () => {
+  const toggleMenu = (event) => {
+    event.stopPropagation();  // Prevent event from propagating to document
     setIsOpen(!isOpen);
   };
+  
 
   const closeMenu = () => {
     setIsOpen(false);
@@ -22,12 +24,13 @@ function Navbar() {
         closeMenu();
       }
     };
-
-    document.addEventListener('mousedown', handleClickOutside);
+  
+    document.addEventListener('click', handleClickOutside);
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('click', handleClickOutside);
     };
   }, []);
+  
 
   return (
     <div className="bg-gray-700 bg-opacity-80 backdrop-filter backdrop-blur-lg text-white fixed top-0 left-0 z-50 w-full">
