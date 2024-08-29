@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useLocation } from "react-router-dom"; // Import useLocation
+import { useLocation, Link } from "react-router-dom"; // Import useLocation
 import bg from "../assets/homeBg.jfif";
 import wave from "../assets/HomeWave.png";
 import quoteBg from "../assets/colorGloBg.jpg";
@@ -19,7 +19,7 @@ import iso from "../assets/certified/iso.png";
 import Categories from "./Categories";
 import ContactSection from "./ContactSection";
 import ButtonSolutions from "./ButtonSolutions";
-import './styles/home.css'
+import "./styles/home.css";
 
 function HomePage() {
   const location = useLocation(); // Get the current location (needed to detect the hash)
@@ -48,11 +48,20 @@ function HomePage() {
         }}
         className="h-[100vh] md:h-[90vh] flex flex-col justify-center items-start px-6 md:px-20 gap-8 relative overflow-hidden"
       >
-        <h1 data-aos={"fade-up"} className="uppercase text-white font-medium text-6xl">
+        <h1
+          data-aos={"fade-up"}
+          className="uppercase text-white font-medium text-6xl"
+        >
           Repair <br /> Restore & Repair
         </h1>
-        <p data-aos={"fade-up"} data-aos-delay={400}  className="text-white text-2xl">Things Can be replace not memories</p>
-        <ButtonSolutions data-aos={"fade-up"} data-aos-delay={400}/>
+        <p
+          data-aos={"fade-up"}
+          data-aos-delay={400}
+          className="text-white text-2xl"
+        >
+          Things Can be replace not memories
+        </p>
+        <ButtonSolutions data-aos={"fade-up"} data-aos-delay={800} />
         {[...Array(4)].map((_, i) => (
           <div
             key={i}
@@ -69,10 +78,13 @@ function HomePage() {
         <div className="grid gap-14 md:grid-cols-3 md:gap-12">
           <div
             data-aos={"fade-right"}
-            className="rounded-xl bg-white p-6 text-center shadow-xl"
-            
+            className="rounded-xl bg-white p-6 text-center shadow-xl border-[3px] border-[#ffb21a]"
+            style={{
+              backgroundImage:
+                "radial-gradient(circle at 29% 107%, #ffb21a33 9%, #0000 38%), radial-gradient(circle at 68% 22%, #ffb21a33 9%, #0000 38%), linear-gradient(#fff, #fff)",
+            }}
           >
-            <div className="mx-auto flex h-24 w-24 -translate-y-16  transform items-center justify-center rounded-full shadow-lg">
+            <div className="mx-auto flex h-24 w-24 -translate-y-16 transform items-center justify-center rounded-full shadow-lg">
               <img src={restore} alt="" />
             </div>
 
@@ -92,7 +104,10 @@ function HomePage() {
           <div
             data-aos={"fade-right"}
             data-aos-delay="100"
-            className="rounded-xl bg-white p-6 text-center shadow-xl"
+            className="rounded-xl bg-white p-6 text-center shadow-xl border-[3px] border-[#5bb671]"
+            style={{
+              backgroundImage: "radial-gradient(circle at 29% 107%, #62af7933 9%, #0000 38%), radial-gradient(circle at 68% 22%, #62af7933 9%, #0000 38%), linear-gradient(#fff, #fff)"
+            }}
           >
             <div className="mx-auto flex h-24 w-24 -translate-y-16  transform items-center justify-center rounded-full shadow-lg">
               <img src={repair} alt="" />
@@ -113,7 +128,10 @@ function HomePage() {
           <div
             data-aos={"fade-right"}
             data-aos-delay="200"
-            className="rounded-xl bg-white p-6 text-center shadow-xl"
+            className="rounded-xl bg-white p-6 text-center shadow-xl border-[3px] border-[#198cff]"
+            style={{
+              backgroundImage: "radial-gradient(circle at 29% 107%, #1c8c9733 9%, #0000 38%), radial-gradient(circle at 68% 22%, #1c8c9733 9%, #0000 38%), linear-gradient(#fff, #fff)"
+            }}
           >
             <div className="mx-auto flex h-24 w-24 -translate-y-16 transform items-center justify-center rounded-full shadow-lg">
               <img src={care} alt="" />
@@ -143,31 +161,33 @@ function HomePage() {
         }}
         className="py-24 px-24 flex flex-col justify-center items-center gap-12"
       >
-        <h1 className="text-orange-300 text-5xl font-bold my-5">
+        <h1 className="text-transparent bg-clip-text bg-gradient-to-br from-orange-300 to-orange-500 text-5xl font-bold my-5">
           EXPERIENCE EXCELLENCE
         </h1>
         <p className=" text-orange-100 text-2xl font-medium">
           At Colorglo, We Provide Exclusive & Exceptional Service We Would
           Ourselves Want.
         </p>
-
+        <Link to="/contact">
         <button className="bg-blue-500 text-white py-2 px-4 rounded">
           Get a Quote
         </button>
+        </Link>
       </div>
-      {/* Solutions  */}{/* Solutions Section */}
-<div id="solutions">
-  <SlideTabsExample />
-</div>
+      {/* Solutions  */}
+      {/* Solutions Section */}
+      <div id="solutions">
+        <SlideTabsExample />
+      </div>
 
       {/* Categories  */}
-      <Categories id="projects"  />
+      <Categories id="projects" />
       {/* Artistry  */}
       <div className="my-12">
-        <h1 className="text-6xl font-semibold text-orange-700 text-center">
-          Unveiling the Artistry
-        </h1>
-        <p className="text-2xl  text-gray-800 text-center my-8">
+      <h1 className="text-6xl font-semibold text-transparent bg-clip-text bg-gradient-to-br from-orange-400 to-orange-700 text-center leading-normal">
+    Unveiling the Artistry
+  </h1>
+        <p className="text-2xl  text-gray-800 text-center py-8">
           From Vintage Classics to Modern Marvels
         </p>
         <div className="flex flex-col md:flex-row justify-around items-center gap-8 md:px-24 sm:px-12 px-4 ">
@@ -195,39 +215,54 @@ function HomePage() {
           </div>
         </div>
       </div>
-        
-      <ContactSection/>
-      <div className="flex flex-col gap-8 justify-between items-center space-y-4 md:space-y-0 md:space-x-6 px-4 md:px-20 my-5">
-      <div className="uppercase my-5 text-4xl md:text-5xl font-bold text-center md:text-left">
-        Certified & Recognised
-      </div> 
-      {/* Infinite smooth scrolling slider for small screens */}
-      <div className="block sm:hidden w-full overflow-hidden">
-        <div className="slider">
-          <div className="slider-track">
-            <div className="slide mx-5"><img src={bbb} alt="BBB" className="w-40 h-auto mx-auto " /></div>
-            <div className="slide mx-5"><img src={ifa} alt="IFA" className="w-40 h-auto mx-auto " /></div>
-            <div className="slide mx-5"><img src={anab} alt="ANAB" className="w-40 h-auto mx-auto " /></div>
-            <div className="slide mx-5"><img src={iso} alt="ISO" className="w-40 h-auto mx-auto " /></div>
 
-            {/* Duplicate slides for continuous loop */}
-            <div className="slide mx-5"><img src={bbb} alt="BBB" className="w-40 h-auto mx-auto " /></div>
-            <div className="slide mx-5"><img src={ifa} alt="IFA" className="w-40 h-auto mx-auto " /></div>
-            <div className="slide mx-5"><img src={anab} alt="ANAB" className="w-40 h-auto mx-auto " /></div>
-            <div className="slide mx-5"><img src={iso} alt="ISO" className="w-40 h-auto mx-auto " /></div>
+      <ContactSection />
+      <div className="flex flex-col gap-8 justify-between items-center space-y-4 md:space-y-0 md:space-x-6 px-4 md:px-20 my-5">
+        <div className="uppercase my-5 text-4xl md:text-5xl font-bold text-center md:text-left">
+          Certified & Recognised
+        </div>
+        {/* Infinite smooth scrolling slider for small screens */}
+        <div className="block sm:hidden w-full overflow-hidden">
+          <div className="slider">
+            <div className="slider-track">
+              <div className="slide mx-5">
+                <img src={bbb} alt="BBB" className="w-40 h-auto mx-auto " />
+              </div>
+              <div className="slide mx-5">
+                <img src={ifa} alt="IFA" className="w-40 h-auto mx-auto " />
+              </div>
+              <div className="slide mx-5">
+                <img src={anab} alt="ANAB" className="w-40 h-auto mx-auto " />
+              </div>
+              <div className="slide mx-5">
+                <img src={iso} alt="ISO" className="w-40 h-auto mx-auto " />
+              </div>
+
+              {/* Duplicate slides for continuous loop */}
+              <div className="slide mx-5">
+                <img src={bbb} alt="BBB" className="w-40 h-auto mx-auto " />
+              </div>
+              <div className="slide mx-5">
+                <img src={ifa} alt="IFA" className="w-40 h-auto mx-auto " />
+              </div>
+              <div className="slide mx-5">
+                <img src={anab} alt="ANAB" className="w-40 h-auto mx-auto " />
+              </div>
+              <div className="slide mx-5">
+                <img src={iso} alt="ISO" className="w-40 h-auto mx-auto " />
+              </div>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Static images visible on larger screens */}
-      <div className="hidden sm:flex flex-row flex-wrap justify-around items-center gap-5">
-        <img src={bbb} alt="BBB" className="w-32 md:w-48 h-auto" />
-        <img src={ifa} alt="IFA" className="w-32 md:w-48 h-auto" />
-        <img src={anab} alt="ANAB" className="w-32 md:w-48 h-auto" />
-        <img src={iso} alt="ISO" className="w-32 md:w-48 h-auto" />
+        {/* Static images visible on larger screens */}
+        <div className="hidden sm:flex flex-row flex-wrap justify-around items-center gap-5">
+          <img src={bbb} alt="BBB" className="w-32 md:w-48 h-auto" />
+          <img src={ifa} alt="IFA" className="w-32 md:w-48 h-auto" />
+          <img src={anab} alt="ANAB" className="w-32 md:w-48 h-auto" />
+          <img src={iso} alt="ISO" className="w-32 md:w-48 h-auto" />
+        </div>
       </div>
-    </div>
-
     </div>
   );
 }
