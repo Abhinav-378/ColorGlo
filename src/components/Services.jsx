@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Button1 from './Button1';
+import { Link } from 'react-router-dom';
 
 function Services({ title, heading, subheading, img, children }) {
   useEffect(() => {
@@ -23,7 +24,9 @@ function Services({ title, heading, subheading, img, children }) {
           <h2 className="text-xl md:text-xl font-medium mb-4">
             {subheading}
           </h2>
+          <Link to='/contact'>
           <Button1 />
+          </Link>
         </div>
         <div data-aos="zoom-in-left" className=" w-full md:w-[40vw] p-4">
           <img src={img} alt={title} className="w-full h-auto object-cover rounded-xl" />
