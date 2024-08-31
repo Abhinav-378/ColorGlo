@@ -18,7 +18,7 @@ function Footer() {
               products.
             </p>
           </div>
-            <div className="px-7  w-[60vw] md:w-auto bg-gradient-to-r from-[rgba(94,100,108,0.075)] via-[hsla(0,11%,56%,0.063)] to-[rgba(166,176,186,0.106)] rounded-[20px] h-full p-5 md:p-10">
+            <div className=" w-[80vw]  mx-auto md:w-auto bg-gradient-to-r from-[rgba(94,100,108,0.075)] via-[hsla(0,11%,56%,0.063)] to-[rgba(166,176,186,0.106)] rounded-[20px] h-full p-7 md:p-10">
               {/* links  */}
               <h2 className="text-xl md:text-2xl font-semibold">
                 Quick Navigation
