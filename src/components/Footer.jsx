@@ -60,7 +60,7 @@ function Footer() {
           <div>
             <h3 className="text-xl font-semibold pb-4 text-center">Social</h3>
             <div className="flex gap-3">
-              <a href="https://www.facebook.com/colorgloindia/" target="blank">
+              <a href="https://www.facebook.com/colorgloindia/" target="_blank">
                 <button className="w-10 h-10 flex items-center justify-center relative overflow-hidden rounded-full bg-white  group transition-all duration-300">
                   <svg
                     className="relative z-10 fill-blue-500 transition-all duration-300 group-hover:fill-white"
@@ -78,7 +78,7 @@ function Footer() {
                   <div className="absolute top-full left-0 w-full h-full rounded-full bg-blue-500 z-0 transition-all duration-500 group-hover:top-0"></div>
                 </button>
               </a>
-              <a href="https://www.instagram.com/colorglo_india/" target="blank">
+              <a href="https://www.instagram.com/colorglo_india/" target="_blank">
                 <button className="w-10 h-10 flex items-center justify-center rounded-full relative overflow-hidden bg-white  group transition-all duration-500">
                   <svg
                     className="fill-pink-600 relative z-10 transition-all duration-500 group-hover:fill-white"
@@ -124,7 +124,7 @@ function Footer() {
                   <div className="absolute top-full left-0 w-full h-full rounded-full bg-gradient-to-bl from-purple-500 via-pink-500 to-yellow-500 z-0 transition-all duration-500 group-hover:top-0"></div>
                 </button>
               </a>
-              <a href="https://x.com/ColorGlo" target="blank">
+              <a href="https://x.com/ColorGlo" target="_blank">
                 <button className="w-10 h-10 flex items-center justify-center rounded-full relative overflow-hidden bg-white group transition-all duration-300">
                   <svg
                     className="fill-black z-10 transition-all duration-300 group-hover:fill-white"
